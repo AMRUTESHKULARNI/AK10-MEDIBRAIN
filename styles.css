@@ -1,0 +1,138 @@
+/* Body and Header */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(120deg, #d0f0fd, #f5f5f5);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+header p {
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-shadow: 0.5px 0.5px 2px rgba(0,0,0,0.2);
+}
+
+/* Container Grid */
+.container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Card Styles with Gradient & Glassmorphism */
+.card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Card Titles and Icons */
+.card h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #333;
+}
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+.card .icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2em;
+    transition: transform 0.3s;
+}
+.card:hover .icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Input Fields with Glassmorphism */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
+    color: #333;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+input[type="number"]:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.2), 0 0 10px rgba(97, 218, 251, 0.7);
+    background: rgba(255,255,255,0.5);
+}
+
+/* Button Styles */
+button {
+    grid-column: 1/-1;
+    padding: 20px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* Result Boxes with Glow Effect */
+.resultBox {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+.resultBox.normal {background: linear-gradient(90deg,#2ecc71,#27ae60); box-shadow: 0 0 15px #2ecc71;}
+.resultBox.low {background: linear-gradient(90deg,#f1c40f,#f39c12); box-shadow: 0 0 15px #f1c40f;}
+.resultBox.high {background: linear-gradient(90deg,#e74c3c,#c0392b); box-shadow: 0 0 15px #e74c3c;}
+
+/* Responsive adjustments */
+@media(max-width:768px){
+    .card {padding: 20px;}
+    header h1 {font-size:2em;}
+    header p {font-size:1em;}
+    button {font-size:18px;}
+}
